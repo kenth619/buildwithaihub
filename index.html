@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build With AI Hub — Claude-Native Agentic Automation (Founding Waitlist)</title>
+<meta name="description" content="A private community for builders shipping Claude-native AI agents and automations — content factories, agent pipelines, real systems you own. Join the founding waitlist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --umber:#14110F;
+  --paper:#EDE6DA;
+  --amber:#FFB454;
+  --ash:#8A8378;
+  --signal:#7BD88F;
+  --line:#2A2520;
+  --card:#1B1714;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--umber);
+  color:var(--paper);
+  font-family:'Inter',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--amber);color:var(--umber)}
+a{color:var(--amber)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--amber);
+}
+header.site{
+  padding:28px 0;border-bottom:1px solid var(--line);
+}
+header.site .wrap{display:flex;justify-content:space-between;align-items:baseline}
+.brand{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:17px;
+  letter-spacing:.02em;color:var(--paper);text-decoration:none;
+}
+.brand span{color:var(--amber)}
+.hdr-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ash)}
+/* HERO */
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+h1{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(34px,4.6vw,52px);line-height:1.08;
+  letter-spacing:-.01em;margin:16px 0 20px;
+}
+h1 em{font-style:normal;color:var(--amber)}
+.sub{color:var(--ash);font-size:17px;max-width:46ch;margin-bottom:32px}
+/* form */
+form.waitlist{max-width:440px}
+form.waitlist label{
+  display:block;font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ash);margin:0 0 6px;
+}
+form.waitlist input[type=email],
+form.waitlist input[type=text]{
+  width:100%;padding:13px 14px;margin-bottom:14px;
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  color:var(--paper);font-family:'Inter',sans-serif;font-size:15px;
+}
+form.waitlist input:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber)}
+form.waitlist button{
+  width:100%;padding:14px;cursor:pointer;
+  background:var(--amber);color:var(--umber);
+  border:none;border-radius:8px;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:16px;
+  transition:transform .12s ease;
+}
+form.waitlist button:hover{transform:translateY(-1px)}
+form.waitlist button:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+.fineprint{font-size:12.5px;color:var(--ash);margin-top:12px}
+.form-msg{margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:13.5px;display:none}
+.form-msg.ok{display:block;color:var(--signal)}
+.form-msg.err{display:block;color:#E88}
+/* terminal */
+.term{
+  background:#0E0C0A;border:1px solid var(--line);border-radius:10px;
+  font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.9;
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+  overflow:hidden;
+}
+.term-bar{
+  display:flex;gap:7px;align-items:center;
+  padding:11px 14px;border-bottom:1px solid var(--line);background:var(--card);
+}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.term-title{margin-left:8px;font-size:11.5px;color:var(--ash);letter-spacing:.05em}
+.term-body{padding:18px 18px 22px;min-height:262px}
+.tline{opacity:0;transform:translateY(3px);transition:opacity .35s ease,transform .35s ease;white-space:pre-wrap;word-break:break-word}
+.tline.show{opacity:1;transform:none}
+.tline .p{color:var(--amber)}
+.tline .ok{color:var(--signal)}
+.tline .dim{color:var(--ash)}
+/* wedge strip */
+.wedge{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:44px 0;background:var(--card)}
+.wedge p{max-width:64ch;font-size:18px}
+.wedge strong{color:var(--amber);font-weight:600}
+.wedge .src{display:block;margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ash)}
+/* modules */
+.modules{padding:72px 0}
+.modules h2,.perks h2{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:26px;margin:10px 0 36px;
+}
+.mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mod{
+  border:1px solid var(--line);border-radius:10px;padding:26px 22px;background:var(--card);
+}
+.mod .mno{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--amber);
+  letter-spacing:.14em;
+}
+.mod h3{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;margin:10px 0 10px}
+.mod p{font-size:14.5px;color:var(--ash)}
+/* perks */
+.perks{padding:0 0 72px}
+.perk-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.perk{border-top:2px solid var(--amber);padding:18px 4px 0}
+.perk h3{font-size:15.5px;font-weight:600;margin-bottom:6px}
+.perk p{font-size:14px;color:var(--ash)}
+.cta-bottom{margin-top:56px;text-align:center}
+.cta-bottom a{
+  display:inline-block;padding:14px 34px;border-radius:8px;
+  background:var(--amber);color:var(--umber);text-decoration:none;
+  font-family:'Syne',sans-serif;font-weight:800;font-size:16px;
+}
+footer.site{border-top:1px solid var(--line);padding:30px 0 44px}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer.site p{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ash)}
+@media (max-width:880px){
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .mod-grid,.perk-list{grid-template-columns:1fr}
+  .hero{padding:52px 0 44px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tline{opacity:1;transform:none;transition:none}
+  form.waitlist button{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">BUILD<span>W/</span>AI HUB</a>
+    <span class="hdr-note">founding cohort · waitlist open</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Founding member waitlist</span>
+      <h1>Build AI agents you actually <em>own</em>.</h1>
+      <p class="sub">A private community for builders shipping Claude-native automation — content factories, agent pipelines, real unattended systems — with no drag-and-drop platform between you and the machine.</p>
+      <form class="waitlist" id="wl">
+        <label for="email">Get first access when the doors open</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <input type="text" id="goal" name="what_would_you_automate" placeholder="What would you automate first? (optional)">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit" id="wl-btn">Join the waitlist</button>
+        <p class="form-msg" id="wl-msg" role="status"></p>
+        <p class="fineprint">No spam. One email when the founding cohort opens, a few build logs before that.</p>
+      </form>
+    </div>
+    <div class="term" aria-label="Example agent run">
+      <div class="term-bar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="term-title">agent — content-factory run</span>
+      </div>
+      <div class="term-body" id="term">
+        <div class="tline"><span class="p">$</span> claude -p "produce today's video"</div>
+        <div class="tline"><span class="dim">▸ researching topic ............</span> done</div>
+        <div class="tline"><span class="dim">▸ writing script (612 words) ...</span> done</div>
+        <div class="tline"><span class="dim">▸ rendering voiceover ..........</span> done</div>
+        <div class="tline"><span class="dim">▸ assembling video (ffmpeg) ....</span> done</div>
+        <div class="tline"><span class="dim">▸ uploading via YouTube API ....</span> done</div>
+        <div class="tline"><span class="ok">✓ published</span> — total 11m 32s · human input: 0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wedge">
+  <div class="wrap">
+    <p>Searches for <strong>"claude agents" are up 115%</strong> this year, while every major no-code workflow term is down 54–72%. The tooling era is ending. The <strong>orchestration era</strong> is here — and orchestration is a skill, not a subscription.</p>
+    <span class="src">source: Google search volume data, 2026</span>
+  </div>
+</section>
+
+<section class="modules">
+  <div class="wrap">
+    <span class="eyebrow">What you'll build</span>
+    <h2>The curriculum ships in build order.</h2>
+    <div class="mod-grid">
+      <article class="mod">
+        <span class="mno">MODULE 01</span>
+        <h3>The Content Factory</h3>
+        <p>A faceless YouTube channel run end-to-end by Claude Code — research, script, voiceover, video assembly, upload. The channel that markets this community is the same system you'll learn to build. Proof first, theory second.</p>
+      </article>
+      <article class="mod">
+        <span class="mno">MODULE 02</span>
+        <h3>Agent Foundations</h3>
+        <p>MCP servers, headless Claude, tool orchestration, and the judgment calls that separate a demo from a system that runs unattended overnight without you babysitting it.</p>
+      </article>
+      <article class="mod">
+        <span class="mno">MODULE 03</span>
+        <h3>Ship &amp; Sell</h3>
+        <p>Turn a working automation into an offer: packaging, pricing, positioning, and landing your first client or your first hundred subscribers.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="perks">
+  <div class="wrap">
+    <span class="eyebrow">Why join the waitlist</span>
+    <h2>Founding members get the best deal we'll ever offer.</h2>
+    <div class="perk-list">
+      <div class="perk">
+        <h3>Founding price, locked for life</h3>
+        <p>The rate you join at is the rate you keep — it only goes up for everyone after you.</p>
+      </div>
+      <div class="perk">
+        <h3>Vote on what gets built first</h3>
+        <p>Founding members set the curriculum priorities. Your automation problems become the modules.</p>
+      </div>
+      <div class="perk">
+        <h3>Weekly live builds, daily async answers</h3>
+        <p>One live build session every week. Questions answered asynchronously every day in between.</p>
+      </div>
+    </div>
+    <div class="cta-bottom">
+      <a href="#wl">Join the founding waitlist</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <p>BUILD W/ AI HUB · © 2026</p>
+    <p>a community for Claude-native builders</p>
+  </div>
+</footer>
+
+<script>
+// ---- terminal reveal ----
+(function(){
+  var lines = document.querySelectorAll('#term .tline');
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) {
+    lines.forEach(function(l){ l.classList.add('show'); });
+    return;
+  }
+  var i = 0;
+  function next(){
+    if (i >= lines.length) return;
+    lines[i].classList.add('show');
+    i++;
+    setTimeout(next, i === 1 ? 900 : 650);
+  }
+  setTimeout(next, 500);
+})();
+
+// ---- waitlist form (Web3Forms) ----
+var W3F_KEY = "b7a02d09-2da7-4522-a513-f955c7cf6397";
+(function(){
+  var form = document.getElementById('wl');
+  var msg = document.getElementById('wl-msg');
+  var btn = document.getElementById('wl-btn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (W3F_KEY === "REPLACE_WITH_WEB3FORMS_KEY") {
+      msg.className = 'form-msg err';
+      msg.textContent = 'Form not wired up yet — check back shortly.';
+      return;
+    }
+    var data = {
+      access_key: W3F_KEY,
+      subject: 'BuildWithAIHub waitlist signup',
+      email: document.getElementById('email').value,
+      what_would_you_automate: document.getElementById('goal').value || '(not answered)'
+    };
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+      body: JSON.stringify(data)
+    }).then(function(r){ return r.json(); }).then(function(res){
+      if (res.success) {
+        form.querySelectorAll('input,button').forEach(function(el){ el.style.display = 'none'; });
+        msg.className = 'form-msg ok';
+        msg.textContent = "✓ You're on the list. Watch your inbox.";
+      } else { throw new Error(res.message || 'failed'); }
+    }).catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Join the waitlist';
+      msg.className = 'form-msg err';
+      msg.textContent = 'Something broke — try again in a minute.';
+    });
+  });
+})();
+</script>
+</body>
+</html>
